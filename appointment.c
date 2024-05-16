@@ -1,10 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
-
-#define MAX_NAME_LEN 50
-#define MAX_DAY_LEN 10
-#define MAX_TIME_LEN 10
+#include "project.h"
 
 void insert_office_hour();
 void update_office_hour();

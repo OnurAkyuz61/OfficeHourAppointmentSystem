@@ -2,10 +2,7 @@
 
 #include <stdio.h>
 #include <string.h>
-
-#define MAX_NAME_LEN 50
-#define MAX_DAY_LEN 10
-#define MAX_TIME_LEN 10
+#include "project.h"
 
 int store_office_hour(int id, const char *day, const char *start, const char *end);
 int find_office_hour(int id);
@@ -83,7 +80,6 @@ void print_office_hour() {
 }
 
 int store_office_hour(int id, const char *day, const char *start, const char *end) {
-    // Simplified storage logic
     char teacher_name[MAX_NAME_LEN];
     printf("Enter your full name: ");
     scanf("%s", teacher_name);
@@ -100,7 +96,6 @@ int store_office_hour(int id, const char *day, const char *start, const char *en
 }
 
 int find_office_hour(int id) {
-    // Simplified search logic
     char teacher_name[MAX_NAME_LEN];
     printf("Enter your full name: ");
     scanf("%s", teacher_name);

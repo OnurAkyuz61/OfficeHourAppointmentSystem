@@ -2,10 +2,7 @@
 
 #include <stdio.h>
 #include <string.h>
-
-#define MAX_NAME_LEN 50
-#define MAX_DAY_LEN 10
-#define MAX_TIME_LEN 10
+#include "project.h"
 
 void create_appointment() {
     char student_name[MAX_NAME_LEN];
@@ -13,12 +10,18 @@ void create_appointment() {
     int id;
 
     printf("Enter your full name: ");
-    scanf("%s", student_name);
+    if (scanf("%s", student_name) != 1) {
+        printf("Error reading student name.\n");
+        return;
+    }
     printf("Enter teacher's full name: ");
-    scanf("%s", teacher_name);
+    if (scanf("%s", teacher_name) != 1) {
+        printf("Error reading teacher name.\n");
+        return;
+    }
 
     char filename[100];
-    sprintf(filename, "%s_appointments.txt", teacher_name);
+    snprintf(filename, sizeof(filename), "%s_appointments.txt", teacher_name);
 
     FILE *file = fopen(teacher_name, "r");
     if (!file) {
@@ -38,7 +41,10 @@ void create_appointment() {
     fclose(file);
 
     printf("Enter desired identification number of office hour: ");
-    scanf("%d", &id);
+    if (scanf("%d", &id) != 1) {
+        printf("Error reading office hour ID.\n");
+        return;
+    }
 
     file = fopen(filename, "a");
     if (!file) {

@@ -2,8 +2,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
-
-#define MAX_LINE_LEN 100
+#include "project.h"
 
 int read_line(char str[], int n) {
     int ch, i = 0;
