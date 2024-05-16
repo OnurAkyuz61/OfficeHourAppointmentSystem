@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <ctype.h>
+
+#define MAX_LINE_LEN 100
+
+int read_line(char str[], int n) {
+    int ch, i = 0;
+
+    while (isspace(ch = getchar()));
+    str[i++] = ch;
+    while ((ch = getchar()) != '\n') {
+        if (i < n) {
+            str[i++] = ch;
+        }
+    }
+    str[i] = '\0';
+    return i;
+}
