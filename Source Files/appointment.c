@@ -12,6 +12,13 @@
 int main() { // main function
     int user_type; // define user type
 
+    printf("The project file information is given below\n"); // print project file information message
+
+    printf("\tFile: %s\n", __FILE__); // print file name
+    printf("\tDate: %s\n", __DATE__); // print date
+    printf("\tTime: %s\n", __TIME__); // print time
+    printf("\tLine: %s\n", __LINE__); // print line number
+
     // Prompt user to choose user type
     printf("**************************************************\n");
     printf("* WELCOME TO THE OFFICE HOUR APPOINTMENT SYSTEM  *\n");

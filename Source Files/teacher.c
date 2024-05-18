@@ -113,7 +113,7 @@ void print_office_hour() { // print office hour function
     char day[MAX_DAY_LEN], start[MAX_TIME_LEN], end[MAX_TIME_LEN]; // define day, start, and end
     printf("ID number Day       Start      End\n"); // print id number day, start, and end
     while (fscanf(file, "%d %s %s %s", &id, day, start, end) == 4) { // loop until end of file is reached
-        printf("%d       %s       %s     %s\n", id, day, start, end); // print id, day, start, and end
+        printf("%d\t%s\t%s\t%s\n", id, day, start, end); // print id, day, start, and end
     }
 
     fclose(file); // Close file
