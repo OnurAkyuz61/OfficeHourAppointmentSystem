@@ -17,7 +17,7 @@ int main() { // main function
     printf("\tFile: %s\n", __FILE__); // print file name
     printf("\tDate: %s\n", __DATE__); // print date
     printf("\tTime: %s\n", __TIME__); // print time
-    printf("\tLine: %s\n", __LINE__); // print line number
+    printf("\tLine: %d\n", __LINE__); // print line number
 
     // Prompt user to choose user type
     printf("**************************************************\n");
