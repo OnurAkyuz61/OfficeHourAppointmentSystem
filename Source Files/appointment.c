@@ -3,7 +3,6 @@
 // for Visual Studio compiler
 #define _CRT_SECURE_NO_WARNINGS
 
-// Include necessary header files
 #include <stdio.h>
 #include "project.h"
 #include "teacher.h"
@@ -20,7 +19,7 @@ int main() { // main function
     printf("\tLine: %d\n", __LINE__); // print line number
 
     // Prompt user to choose user type
-    printf("**************************************************\n");
+    printf("\n**************************************************\n");
     printf("* WELCOME TO THE OFFICE HOUR APPOINTMENT SYSTEM  *\n");
     printf("**************************************************\n");
     printf("Who are you? (Enter 1 for TEACHER, 2 for STUDENT): ");
@@ -32,7 +31,7 @@ int main() { // main function
     if (user_type == 1) { // if user type is teacher
         char operation; // define operation
         do { // loop until user chooses to exit
-            printf("Enter operation code (i: insert, u: update, p: print, q: quit): "); // print enter operation code message
+            printf("\nEnter operation code (i: insert, u: update, p: print, q: quit): "); // print enter operation code message
             operation = getchar(); // get operation
             getchar(); // clear input buffer
             switch (operation) { // switch on operation

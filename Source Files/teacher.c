@@ -28,10 +28,10 @@ void insert_office_hour() { // insert office hour function
     read_line(end, MAX_TIME_LEN); // read ending hour
 
     if (store_office_hour(id, day, start, end, filename) == 0) { // if store office hour function returns 0
-        printf("Office hour added successfully.\n"); // print office hour added successfully message
+        printf("\nOffice hour added successfully.\n"); // print office hour added successfully message
     }
     else { // if store office hour function returns 1
-        printf("Error adding office hour.\n"); // print error adding office hour message
+        printf("\nError adding office hour.\n"); // print error adding office hour message
     }
 }
 
@@ -58,7 +58,7 @@ void update_office_hour() { // update office hour function
     printf("Enter the identification number to update: "); // print enter the identification number to update message
     scanf("%d", &id); // get id
     getchar();  // clear input buffer
-    printf("1: Update day\n2: Update start time\n3: Update end time\n"); // print update day, start time, and end time message
+    printf("\n1: Update day\n2: Update start time\n3: Update end time\n"); // print update day, start time, and end time message
     printf("Enter your choice: "); // print enter your choice message
     scanf("%d", &choice); // get choice
     getchar();  // clear input buffer
@@ -100,20 +100,21 @@ void update_office_hour() { // update office hour function
 
 void print_office_hour() { // print office hour function
     char filename[MAX_NAME_LEN]; // define filename
-    printf("Enter your full name: "); // print enter full name message
+    printf("\nEnter your full name: "); // print enter full name message
     read_line(filename, MAX_NAME_LEN); // read full name
 
     FILE* file = fopen(filename, "r"); // Open file in read mode
     if (file == NULL) { // if file does not exist
-        printf("Error opening file %s.\n", filename); // print error message
+        printf("\nError opening file %s.\n", filename); // print error message
         return; // return statement
     }
 
     int id; // define id
     char day[MAX_DAY_LEN], start[MAX_TIME_LEN], end[MAX_TIME_LEN]; // define day, start, and end
-    printf("ID number Day       Start      End\n"); // print id number day, start, and end
+    printf("\n%-10s %-10s %-15s %-15s\n", "ID number", "Day", "Start", "End"); // print id number day, start, and end
+    printf("-----------------------------------------------\n");
     while (fscanf(file, "%d %s %s %s", &id, day, start, end) == 4) { // loop until end of file is reached
-        printf("%d\t%s\t%s\t%s\n", id, day, start, end); // print id, day, start, and end
+        printf("%-10d %-10s %-15s %-15s\n", id, day, start, end); // print id, day, start, and end
     }
 
     fclose(file); // Close file
