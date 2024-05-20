@@ -3,10 +3,10 @@
 // for Visual Studio compiler
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <stdio.h>
-#include "project.h"
-#include "teacher.h"
-#include "student.h"
+#include <stdio.h> // include standard input output header
+#include "project.h" // include project header
+#include "teacher.h" // include teacher header
+#include "student.h" // include student header
 
 int main() { // main function
     int user_type; // define user type
@@ -24,7 +24,10 @@ int main() { // main function
     printf("**************************************************\n");
     printf("Who are you? (Enter 1 for TEACHER, 2 for STUDENT): ");
 
-    scanf("%d", &user_type); // get user type
+    if (scanf("%d", &user_type) != 1) { // get user type
+        printf("Invalid input.\n"); // print invalid input message
+        return 1; // return statement
+    }
 
     getchar(); // clear input buffer
 
@@ -42,8 +45,13 @@ int main() { // main function
                 update_office_hour(); // call update office hour function
                 break; // break statement
             case 'p': // if operation is print
-                print_office_hour(); // call print office hour function
-                break; // break statement
+            {
+                char teacher_name[MAX_NAME_LEN]; // define teacher name
+                printf("Enter your full name: "); // print enter full name message
+                read_line(teacher_name, MAX_NAME_LEN); // read teacher name
+                print_office_hour(teacher_name); // call print office hour function with teacher's name
+            }
+            break; // break statement
             case 'q': // if operation is quit
                 break; // break statement
             default: // if operation is invalid

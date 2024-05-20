@@ -1,0 +1,4 @@
+Teacher		Student		Day	        Start	        End
+Teacher X 	Student X 	Wednesday 	10 a.m.   	11 a.m.   
+Teacher Y 	Student X 	Tuesday   	3 p.m.    	4 p.m.    
+Student X Teacher X 2
